@@ -69,7 +69,7 @@ void Zadacha36 (int[] currentArray)
 
 
 // Задача 38: Задайте массив вещественных чисел. Найдите разницу между максимальным и минимальным элементов массива.
-
+/*
 Console.WriteLine();
 Console.WriteLine("_______________");
 Console.WriteLine("Задача 38");
@@ -80,7 +80,89 @@ Random rand = new Random ();
                arrayDouble[i] = Convert.ToDouble(rand.Next (1000, 100000))/100;
                Console.WriteLine (arrayDouble[i]);
             }
+            PrintDoubleArray(arrayDouble);
+            Zadacha38 (arrayDouble);
+       void Zadacha38 (double [] currentArray)
+            {
+                double min = currentArray [0];
+                double max = currentArray [0];
+                for (int i = 0; i < currentArray.Length; i++)
+                 {
+               if (currentArray[i] > max) max = currentArray [i];
+               else if (currentArray [i] < min) min = currentArray [i];
+            }
+            Console.WriteLine ($"Разность равна {max} - {min} = {max - min}");
+            }
+
+           void PrintArray (int[] currentArray)
+        {
+             Console.WriteLine ("Вывод массива на печать");
+            for (int i = 0; i < currentArray.Length; i++) 
+            {
+                Console.Write (currentArray[i] + "\t");
+            }
+            Console.WriteLine();
+        }
+         void PrintDoubleArray (double[] currentArray)
+        {
+             Console.WriteLine ("Вывод массива на печать");
+            for (int i = 0; i < currentArray.Length; i++) 
+            {
+                Console.Write(currentArray[i] + "\t");
+            }
+            Console.WriteLine ();
+        }
+        */
+
+        int [] array = new int [7];
+        Console.WriteLine();
+        Console.WriteLine("_______________");
+        Console.WriteLine("Задача 38");
+
+        MakeArray(array);
+        PrintArray(array);
+        Console.WriteLine ("Массив в обратном порядке");
+        BackArray(array);
+        PrintArray(array);
+        
+        void MakeArray(int [] currentArray);
+        {
+            Random rand = new Random ();
+            for (int i = 0; i < currentArray.Length; i++);
+            {
+                currentArray[i] = rand.Next (1,10);
+            }
+        }
+        void PrintArray (int [] currentArray)
+        {
+            for (int i = 0; i < currentArray.Length; i++);
+            {
+                 Console.Write ($"{currentArray[i]} \t");
+            }
+             Console.WriteLine("");
+        }
+        void BackArray (int [] currentArray)
+        {
+            int lastIndex = currentArray.Length - 1;
+            for (int i = 0; i < currentArray.Length / 2; i++)
+            {
+                int temp = currentArray[i];
+                currentArray[i] = currentArray [lastIndex];
+                currentArray[lastIndex] = temp;
+                lastIndex--;
+            }
+        }
+        Console.WriteLine("___________");
+
+
+
+
 
         }
     }
 }
+            
+
+        
+    
+
